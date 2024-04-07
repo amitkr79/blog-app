@@ -30,7 +30,7 @@ const Dashboard = () => {
     const fetchPosts = async ()=> {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://blog-app-2l2l.onrender.com/posts/users/${id}`,{withCredentials:true,headers:{Authorization: `Bearer ${token}`}})
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/users/${id}`,{withCredentials:true,headers:{Authorization: `Bearer ${token}`}})
         setPosts(response.data)
       } catch (error) {
         console.log(error);
@@ -55,7 +55,7 @@ const Dashboard = () => {
                
                <div className="dashboard__post-info">
                   <div className="dashboard__post-thumbnail">
-                    <img src={`https://blog-app-2l2l.onrender.com/uploads/${post.thumbnail}`} alt="" />
+                    <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${post.thumbnail}`} alt="" />
                   </div>
                   <h5>{post.title}</h5>
                </div>

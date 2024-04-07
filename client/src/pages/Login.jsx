@@ -28,7 +28,7 @@ const Login = () => {
     e.preventDefault();
     setError('')
     try {
-      const response = await axios.post(`https://blog-app-2l2l.onrender.com/users/login`,userData);
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/login`,userData);
       const user = response.data;
       setCurrentUser(user)
       navigate('/')

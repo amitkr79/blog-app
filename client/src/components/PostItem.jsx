@@ -10,7 +10,7 @@ import PostAuthor from './PostAuthor'
     <article className='post'>
 
         <div className="post__thumbnail">
-            <img src={`https://blog-app-2l2l.onrender.com/uploads/${thumbnail}`} alt={title} />
+            <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnail}`} alt={title} />
             
         </div>
         <div className="post__content">

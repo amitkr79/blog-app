@@ -21,7 +21,7 @@ const PostDetail = () => {
     const getPost = async ()=> {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://blog-app-2l2l.onrender.com/posts/${id}`)
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${id}`)
         setPost(response.data)
         
       } catch (error) {
@@ -57,7 +57,7 @@ const PostDetail = () => {
         </div>
         <h1>{post.title}</h1>
         <div className="post-detail__thumbnail">
-          <img src={`https://blog-app-2l2l.onrender.com/uploads/${post.thumbnail}`}alt="" />
+          <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${post.thumbnail}`}alt="" />
         </div>
         <p dangerouslySetInnerHTML={{__html: post.description}}></p>
       </div>}

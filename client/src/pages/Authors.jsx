@@ -13,7 +13,7 @@ const Authors = () => {
    const getAuthors = async ()=> {
     setIsLoading(true);
     try {
-      const response = await axios.get(`https://blog-app-2l2l.onrender.com/users`)
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`)
       setAuthors(response.data)
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ const Authors = () => {
         authors.map(({_id:id ,avatar,name,posts})=> {
           return <Link key={id} to = {`/posts/users/${id}`} className='author' >
             <div className="author__avatar">
-              <img src={`https://blog-app-2l2l.onrender.com/uploads/${avatar}`} alt={`Images of ${name}`}/>
+              <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} alt={`Images of ${name}`}/>
             </div>
             <div className="author__info">
               <h4>{name}</h4>

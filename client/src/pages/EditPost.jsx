@@ -80,7 +80,7 @@ const EditPost = () => {
     const getPost = async () => {
       try {
         const response = await axios.get(
-          `https://blog-app-2l2l.onrender.com/posts/${id}`
+          `${process.env.REACT_APP_BASE_URL}/posts/${id}`
         );
         setTitle(response.data.title);
         setDescription(response.data.description);
@@ -102,7 +102,7 @@ const EditPost = () => {
 
     try {
       const response = await axios.patch(
-        `https://blog-app-2l2l.onrender.com/posts/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/posts/${id}`,
         postData,
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );

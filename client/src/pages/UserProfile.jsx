@@ -31,9 +31,7 @@ const UserProfile = () =>{
 
   useEffect(()=>{
     const getUser = async ()=> {
-      const response = await axios.get(`https://blog-app-2l2l.onrender.com
-      Connect
-      /users/${currentUser.id}`,{withCredentials:true,headers:{Authorization: `Bearer ${token}`}})
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/users/${currentUser.id}`,{withCredentials:true,headers:{Authorization: `Bearer ${token}`}})
       const {name,email,avatar} =response.data;
       setName(name);
       setEmail(email);
@@ -47,9 +45,7 @@ const UserProfile = () =>{
     try {
       const postData = new FormData();
       postData.set('avatar', avatar);
-      const response = await axios.post(`https://blog-app-2l2l.onrender.com
-      Connect
-      /users/change-avatar`,postData,{withcredentials: true,headers:{Authorization:`Bearer ${token}`}})
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/change-avatar`,postData,{withcredentials: true,headers:{Authorization:`Bearer ${token}`}})
       setAvatar(response?.data.avatar)
     } catch (error) {
       console.log(error);
@@ -68,9 +64,7 @@ const UserProfile = () =>{
       UserData.set('newPassword',newPassword);
       UserData.set('newConfirmPassword',newConfirmPassword);
 
-      const response = await axios.patch(`https://blog-app-2l2l.onrender.com
-      Connect
-      /users/edit-user`,UserData,{withCredentials:true,headers:{Authorization:`Bearer ${token}`}})
+      const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/users/edit-user`,UserData,{withCredentials:true,headers:{Authorization:`Bearer ${token}`}})
       if(response.status===200){
         //log user out
         navigate('/logout')
@@ -89,7 +83,7 @@ const UserProfile = () =>{
      <div className="profile__details">
       <div className="avatar__wrapper">
         <div className="profile__avatar">
-          <img src={`https://blog-app-2l2l.onrender.com/uploads/${avatar}`} alt="" />
+          <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} alt="" />
         </div>
 
         <form  className="avatar__form">
