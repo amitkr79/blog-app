@@ -23,7 +23,7 @@ const Dashboard = () => {
     if(!token){
       navigate('/login')
     }
-  },[])
+  })
 
   useEffect(()=>{
 
@@ -39,7 +39,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
     fetchPosts();
-  },[])
+  })
   if(isLoading){
     return <Loader/>
   }

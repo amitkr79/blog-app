@@ -26,7 +26,7 @@ const EditPost = () => {
     if (!token) {
       navigate("/login");
     }
-  }, []);
+  });
 
   const modules = {
     toolbar: [
@@ -89,7 +89,7 @@ const EditPost = () => {
       }
     };
     getPost();
-  },[]);
+  });
 
   const editPost = async (e) => {
     e.preventDefault();

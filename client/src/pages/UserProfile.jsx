@@ -27,7 +27,7 @@ const UserProfile = () =>{
     if(!token){
       navigate('/login')
     }
-  },[])
+  })
 
   useEffect(()=>{
     const getUser = async ()=> {
@@ -38,7 +38,7 @@ const UserProfile = () =>{
       setAvatar(avatar);
     }
     getUser()
-  },[])
+  })
 
   const changeAvatarHandle = async ()=> {
     setIsAvatarTouched(false)
