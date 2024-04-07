@@ -89,9 +89,7 @@ const UserProfile = () =>{
      <div className="profile__details">
       <div className="avatar__wrapper">
         <div className="profile__avatar">
-          <img src={`https://blog-app-2l2l.onrender.com
-Connect
-/uploads/${avatar}`} alt="" />
+          <img src={`https://blog-app-2l2l.onrender.com/uploads/${avatar}`} alt="" />
         </div>
 
         <form  className="avatar__form">

@@ -12,9 +12,7 @@ const Posts = () => {
       const fetchPosts = async ()=> {
         setIsLoading(true);
         try {
-          const response = await axios.get(`https://blog-app-2l2l.onrender.com
-          Connect
-          /posts`)
+          const response = await axios.get(`https://blog-app-2l2l.onrender.com/posts`)
           setPosts(response?.data);
         } catch (err) {
           console.log(err)

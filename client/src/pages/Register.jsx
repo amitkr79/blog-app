@@ -24,9 +24,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `https://blog-app-2l2l.onrender.com
-        Connect
-        /users/register`,
+        `https://blog-app-2l2l.onrender.com/users/register`,
         userData
       );
       const newUser = await response.data;
