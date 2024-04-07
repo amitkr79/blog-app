@@ -102,7 +102,9 @@ const EditPost = () => {
 
     try {
       const response = await axios.patch(
-        `${process.env.REACT_APP_BASE_URL}/posts/${id}`,
+        `https://blog-app-2l2l.onrender.com
+        Connect
+        /posts/${id}`,
         postData,
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
