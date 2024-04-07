@@ -25,7 +25,7 @@ const CreatePost = () => {
     if(!token){
       navigate('/login')
     }
-  })
+  },[])
 
 
   const  modules  = {
